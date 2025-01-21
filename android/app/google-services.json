@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "698988468292",
+    "project_id": "flutter-otp-auth-3b594",
+    "storage_bucket": "flutter-otp-auth-3b594.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698988468292:android:3f1f28aecdf0b9e7cec411",
+        "android_client_info": {
+          "package_name": "com.company.otpauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcE7fIQUuAyunASO4wzlTJgqRZ29dMTVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
