@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:new2/apgschools.dart';
 // import 'package:new1_project/listView.dart';
 // import 'package:new1_project/phoneauth.dart';
 // import 'package:new1_project/streamhome.dart';
@@ -31,7 +32,7 @@ Future<void> main()async {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home:PhoneAuth(),
+    home:MyApp(),
   ));
 
 }
