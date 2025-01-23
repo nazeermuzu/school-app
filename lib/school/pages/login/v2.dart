@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:new2/apgschools.dart';
 import 'package:new2/school/api/api.dart';
 import 'package:pinput/pinput.dart';
 
 class V2 extends StatelessWidget {
   TextEditingController pinController = TextEditingController();
+  TextEditingController phonecontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +70,10 @@ class V2 extends StatelessWidget {
           ElevatedButton(
             child: const Text('Verify OTP'),
             onPressed: () {
-              Api().verifyotp(pinController.text);
-              print("Verifying OTP...");
+              Api().verifyotp(pinController.text, phonecontroller);
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => MyApp()));
+              // print("Verifying OTP...");
             },
           ),
         ],
