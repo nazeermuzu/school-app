@@ -24,7 +24,7 @@ class Api {
   }
 
   dashboard() async {
-    var response = await dio.get('${baseUrl}/todos');
+    var response = await dio.get('${baseUrl}/dashboard');
 
     return response.data;
   }
