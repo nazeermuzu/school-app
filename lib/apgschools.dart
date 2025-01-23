@@ -1,6 +1,6 @@
-
 import 'dart:async';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:new2/school/api/api.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
@@ -10,9 +10,12 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'dashb.dart';
 
 //import 'dashboardscreen.dart';
-
-
-
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -64,12 +67,14 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   TextEditingController passwordController = TextEditingController();
-  bool passwordVisible=false;
+  TextEditingController mobileController = TextEditingController();
+
+  bool passwordVisible = false;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    passwordVisible=true;
+    passwordVisible = true;
   }
 
   @override
@@ -78,8 +83,7 @@ class _HomeState extends State<Home> {
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.blueAccent,
         body: Stack(
-          children: <Widget> [
-
+          children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Center(
@@ -91,9 +95,10 @@ class _HomeState extends State<Home> {
                   height: 1150,
                   width: MediaQuery.of(context).size.width * 0.80,
                   child: const Padding(
-                    padding: EdgeInsets.only(left:15,top: 30,right: 120),
+                    padding: EdgeInsets.only(left: 15, top: 30, right: 120),
                     child: Center(
-                      child: Text("Proceed with your",
+                      child: Text(
+                        "Proceed with your",
                         style: TextStyle(
                             fontWeight: FontWeight.normal,
                             fontSize: 20,
@@ -101,21 +106,24 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-
                 ),
               ),
-
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 50 ,right: 50,top: 100,),
+              padding: const EdgeInsets.only(
+                left: 50,
+                right: 50,
+                top: 100,
+              ),
               child: Column(
                 children: [
                   Center(
                     child: Container(
-                      child: Image.asset('assets/image/APGschool.png',),
+                      child: Image.asset(
+                        'assets/image/images.jpg',
+                      ),
                       height: 260,
                       width: 250,
-
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: Colors.black87,
@@ -124,15 +132,16 @@ class _HomeState extends State<Home> {
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-
                     ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:110,right: 200),
-              child: Center(child: Text("LOGIN",
+              padding: const EdgeInsets.only(top: 110, right: 200),
+              child: Center(
+                  child: Text(
+                "LOGIN",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
@@ -148,9 +157,7 @@ class _HomeState extends State<Home> {
                   child: IntlPhoneField(
                     showDropdownIcon: true,
                     dropdownIconPosition: IconPosition.trailing,
-                    decoration: InputDecoration(
-                        hintText: "Phone Number"
-                    ),
+                    decoration: InputDecoration(hintText: "Phone Number"),
                     initialCountryCode: 'IN',
                     onChanged: (phone) {
                       print(phone.completeNumber);
@@ -165,6 +172,7 @@ class _HomeState extends State<Home> {
                 // height: 50.0,
                 padding: EdgeInsets.only(top: 370),
                 child: TextField(
+                  controller: passwordController,
                   obscureText: passwordVisible,
                   decoration: InputDecoration(
                     labelText: "Password",
@@ -174,7 +182,7 @@ class _HomeState extends State<Home> {
                           : Icons.visibility_off),
                       onPressed: () {
                         setState(
-                              () {
+                          () {
                             passwordVisible = !passwordVisible;
                           },
                         );
@@ -188,18 +196,20 @@ class _HomeState extends State<Home> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:820),
+              padding: const EdgeInsets.only(top: 220),
               child: Center(
                 child: TextButton(
                   onPressed: () {
                     //forgot password screen
                   },
-                  child: const Text('Forgot Password',),
+                  child: const Text(
+                    'Forgot Password',
+                  ),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:620,left: 40),
+              padding: const EdgeInsets.only(top: 520, left: 40),
               child: Center(
                 child: Container(
                     width: MediaQuery.of(context).size.width * 0.50,
@@ -208,11 +218,12 @@ class _HomeState extends State<Home> {
                     child: ElevatedButton(
                         child: const Text('Login'),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>MyApp6()));
-                          print(passwordController.text);
-                        },style: ElevatedButton.styleFrom(backgroundColor: Colors.blue)
-                    )
-                ),
+                          Api().requestotp(passwordController);
+                          // Navigator.push(context, MaterialPageRoute(builder: (context)=>MyApp6()));
+                          // print(passwordController.text);
+                        },
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue))),
               ),
             ),
           ],
@@ -220,17 +231,17 @@ class _HomeState extends State<Home> {
   }
 }
 
-
 class IntroSlider extends StatefulWidget {
   const IntroSlider({Key? key}) : super(key: key);
 
   @override
   State<IntroSlider> createState() => _IntroSliderState();
 }
-class _IntroSliderState extends State<IntroSlider> {
-  PageController _controller=PageController();
 
-  bool isLastPage=false;
+class _IntroSliderState extends State<IntroSlider> {
+  PageController _controller = PageController();
+
+  bool isLastPage = false;
 
   @override
   Widget build(BuildContext context) {
@@ -241,51 +252,53 @@ class _IntroSliderState extends State<IntroSlider> {
         children: [
           Expanded(
               child: PageView(
-                controller: _controller,
-                scrollDirection: Axis.horizontal,
-                onPageChanged: (index){
-                  setState(() {
-                    //2 is our last page starting from 0
-                    isLastPage=index==2;
-                  });
-                },
-                children: [
-                  //One page layout
-                  BuildIntroPage(
-                    img: 'assets/image/APGschool.png',
+            controller: _controller,
+            scrollDirection: Axis.horizontal,
+            onPageChanged: (index) {
+              setState(() {
+                //2 is our last page starting from 0
+                isLastPage = index == 2;
+              });
+            },
+            children: [
+              //One page layout
+              BuildIntroPage(
+                img: 'assets/image/images.jpg',
+                title: 'Page One',
+                description: "AGP is a private school situated at capital"
+                    "Governorate- Khanis,Kingdom of Bahrain. AGP"
+                    "started operation in 1996,with around 250 puplis "
+                    "in GRades one,tow,and three",
+              ),
 
-                    title: 'Page One',
-                    description: "AGP is a private school situated at capital"
-                        "Governorate- Khanis,Kingdom of Bahrain. AGP"
-                        "started operation in 1996,with around 250 puplis "
-                        "in GRades one,tow,and three",
-                  ),
+              BuildIntroPage(
+                img: 'assets/image/images.png',
+                title: 'Page Two',
+                description: 'After peeling the strawberries, '
+                    "AGP is a private school situated at capital"
+                    "Governorate- Khanis,Kingdom of Bahrain. AGP"
+                    "started operation in 1996,with around 250 puplis "
+                    "in GRades one,tow,and three",
+              ),
 
-                  BuildIntroPage(
-                    img: 'assets/image/APGschool.png',
-                    title: 'Page Two',
-                    description: 'After peeling the strawberries, '
-                        "AGP is a private school situated at capital"
-                        "Governorate- Khanis,Kingdom of Bahrain. AGP"
-                        "started operation in 1996,with around 250 puplis "
-                        "in GRades one,tow,and three",
-                  ),
-
-                  BuildIntroPage(
-                    img: 'assets/image/images 34.jpg',
-                    title: 'Page Three',
-                    description: "AGP is a private school situated at capital"
-                        "Governorate- Khanis,Kingdom of Bahrain. AGP"
-                        "started operation in 1996,with around 250 puplis "
-                        "in GRades one,tow,and three",
-                  ),
-                ],
-              )),
-          SizedBox(height: 15,),
+              BuildIntroPage(
+                img: 'assets/image/images (1).jpg',
+                title: 'Page Three',
+                description: "AGP is a private school situated at capital"
+                    "Governorate- Khanis,Kingdom of Bahrain. AGP"
+                    "started operation in 1996,with around 250 puplis "
+                    "in GRades one,tow,and three",
+              ),
+            ],
+          )),
+          SizedBox(
+            height: 15,
+          ),
           Center(
             child: SmoothPageIndicator(
-              controller: _controller, count: 3,
-              onDotClicked: (index){
+              controller: _controller,
+              count: 3,
+              onDotClicked: (index) {
                 _controller.animateToPage(index,
                     duration: Duration(milliseconds: 500),
                     curve: Curves.easeIn);
@@ -294,8 +307,7 @@ class _IntroSliderState extends State<IntroSlider> {
                   activeDotColor: Theme.of(context).primaryColor,
                   dotHeight: 7.0,
                   dotWidth: 7.0,
-                  dotColor: Colors.black12
-              ),
+                  dotColor: Colors.black12),
             ),
           ),
           SizedBox(
@@ -309,40 +321,55 @@ class _IntroSliderState extends State<IntroSlider> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100),
                   ),
-
                 ),
-                onPressed: isLastPage?(){
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return Scaffold(
-                      backgroundColor: Colors.blueAccent,
-                      body: Stack(
-                        children: [
-
-                        ],
-                      ),
-                    );
-                  }));
-                }:(){
-                  _controller.nextPage(duration: Duration(milliseconds: 500), curve: Curves.easeIn);
-                },
-                child:Text(isLastPage?'CONTINUE':'Next',
-                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold ,color: Colors.white,backgroundColor: Colors.red),)),
+                onPressed: isLastPage
+                    ? () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return Scaffold(
+                            backgroundColor: Colors.blueAccent,
+                            body: Stack(
+                              children: [],
+                            ),
+                          );
+                        }));
+                      }
+                    : () {
+                        _controller.nextPage(
+                            duration: Duration(milliseconds: 500),
+                            curve: Curves.easeIn);
+                      },
+                child: Text(
+                  isLastPage ? 'CONTINUE' : 'Next',
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      backgroundColor: Colors.red),
+                )),
           ),
           TextButton(
-              onPressed: (){
+              onPressed: () {
                 _controller.jumpToPage(2);
               },
-              child: Text('Skip',style: TextStyle(fontSize: 18,color: Colors.black),)),
-          SizedBox(height: 15,),
+              child: Text(
+                'Skip',
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              )),
+          SizedBox(
+            height: 15,
+          ),
         ],
       ),
     );
   }
 }
+
 class BuildIntroPage extends StatelessWidget {
   String title;
   String img;
   String description;
+
   BuildIntroPage({
     super.key,
     required this.title,
@@ -356,34 +383,39 @@ class BuildIntroPage extends StatelessWidget {
       children: [
         Expanded(
             child: Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                ),
-                image: DecorationImage(
-                  image: AssetImage(img),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            )),
+          decoration: BoxDecoration(
+            color: Theme.of(context).primaryColor,
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(20),
+              bottomLeft: Radius.circular(20),
+            ),
+            image: DecorationImage(
+              image: AssetImage(img),
+              fit: BoxFit.cover,
+            ),
+          ),
+        )),
         SizedBox(
           height: 40,
         ),
-        Text(title,
-          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 36),),
+        Text(
+          title,
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
+        ),
         SizedBox(
           height: 20,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: Text(description,
+          child: Text(
+            description,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16,color: Colors.black87),),
+            style: TextStyle(fontSize: 16, color: Colors.black87),
+          ),
         ),
-        SizedBox(height: 20,),
-
+        SizedBox(
+          height: 20,
+        ),
       ],
     );
   }

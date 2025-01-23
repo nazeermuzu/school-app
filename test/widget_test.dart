@@ -11,7 +11,7 @@ import 'package:new2/design2.dart';
 
 //import 'package:new2/main.dart';
 
-//import '../android/lib/design2.dart';
+// import '../android/lib/design2.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
