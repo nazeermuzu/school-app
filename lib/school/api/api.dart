@@ -14,15 +14,25 @@ class Api {
     return response.data;
   }
 
-  verifyotp(pinController) async {
-    print("i need otp " + pinController);
-    var response = await dio
-        .post('${baseUrl}/auth/verify-otp', data: {"otp_code": pinController});
+  verifyotp(pinController)  async {
+    print("i need a otp"+pinController);
+    var response;
+    try{
+      response = await dio.post('${baseUrl}/auth/verify-otp',data: {
+        "phone_number":"+919025559288",
 
-    print(response.data);
+        "otp_code":pinController
+      });
+    }
+    catch (e){
+
+      DioException exception = e as DioException;
+      print(exception.response);
+    }
+
+
     return response.data;
   }
-
   dashboard() async {
     var response = await dio.get('${baseUrl}/dashboard');
 
