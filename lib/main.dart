@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:new2/apgschools.dart';
+import 'package:new2/school/pages/dashboard/dashboard.dart';
 import 'package:new2/school/pages/login/v2.dart';
 import 'package:new2/school/pages/request.dart';
 
@@ -32,7 +33,7 @@ Future<void> main() async {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Votp(),
+    home: MyApp6(),
   ));
 }
 

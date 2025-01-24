@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:new2/school/api/api.dart';
 
+import 'login/v2.dart';
+
 class Votp extends StatelessWidget {
   TextEditingController phonecontroller = TextEditingController();
 
@@ -33,6 +35,7 @@ class Votp extends StatelessWidget {
           ElevatedButton(
             child: const Text('Summit'),
             onPressed: () {
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>V2()));
               Api().requestotp(phonecontroller.text);
               //  print("Verifying Phone Number...");
             },
