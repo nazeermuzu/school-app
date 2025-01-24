@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:new2/school/api/api.dart';
+import 'package:new2/school/pages/login/v2.dart';
 
 import 'login/v2.dart';
 
 class Votp extends StatelessWidget {
   TextEditingController phonecontroller = TextEditingController();
-
-  // TextEditingController otpcontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +36,8 @@ class Votp extends StatelessWidget {
             onPressed: () {
               Navigator.push(context,MaterialPageRoute(builder: (context)=>V2()));
               Api().requestotp(phonecontroller.text);
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => V2()));
               //  print("Verifying Phone Number...");
             },
           ),

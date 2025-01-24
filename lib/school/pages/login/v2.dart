@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new2/apgschools.dart';
 import 'package:new2/school/api/api.dart';
 import 'package:pinput/pinput.dart';
 
@@ -74,6 +75,7 @@ class V2 extends StatelessWidget {
               Api().verifyotp(pinController.text,phonecontroller.text);
               Navigator.push(context,MaterialPageRoute(builder: (context)=>MyApp()));
               //print("Verifying OTP...");
+
             },
           ),
         ],
