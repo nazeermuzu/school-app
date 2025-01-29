@@ -64,7 +64,7 @@ class _NotificationsState extends State<Notifications> {
                       Text(notifications[index]["id"].toString()),
                       Text(notifications[index]["id"].toString()),
                       Text(notifications[index]["id"].toString()),
-                      Text(notifications[index]["id"]),
+                      Text(notifications[index]["id"].toString()),
                       Text(notifications[index]["id"]),
                       Text(notifications[index]["id"].toString()),
                       Text(notifications[index]["id"].toString()),
