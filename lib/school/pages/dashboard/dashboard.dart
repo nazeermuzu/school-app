@@ -3,11 +3,9 @@ import "package:flutter/material.dart";
 
 import "orderhistory.dart";
 
-
-
-
 class MyApp6 extends StatelessWidget {
-  const MyApp6 ({Key? key}) : super(key: key);
+  const MyApp6({Key? key}) : super(key: key);
+
 // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -20,13 +18,17 @@ class MyApp6 extends StatelessWidget {
     );
   }
 }
+
 class Birthdays extends StatelessWidget {
   const Birthdays({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dashboard",),
+        title: Text(
+          "Dashboard",
+        ),
       ),
       body: const Center(
         child: Icon(
@@ -66,10 +68,9 @@ class Birthdays extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.account_circle_sharp),
-              title: Text("My Profile",
-              style: TextStyle(
-                color: Colors.grey
-              ),
+              title: Text(
+                "My Profile",
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () => Navigator.push(
                 context,
@@ -78,15 +79,12 @@ class Birthdays extends StatelessWidget {
                 ),
               ),
             ),
-            Divider(
-
-            ),
+            Divider(),
             ListTile(
               leading: Icon(Icons.account_circle_sharp),
-              title: Text("Order History",
-                style: TextStyle(
-                    color: Colors.grey
-                ),
+              title: Text(
+                "Order History",
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () => Navigator.push(
                 context,
@@ -98,10 +96,9 @@ class Birthdays extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.check_outlined),
-              title: Text("Ckeckout",
-                style: TextStyle(
-                    color: Colors.grey
-                ),
+              title: Text(
+                "Ckeckout",
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () => Navigator.push(
                 context,
@@ -113,10 +110,9 @@ class Birthdays extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.heart_broken_outlined),
-              title: Text("About APG",
-                style: TextStyle(
-                    color: Colors.grey
-                ),
+              title: Text(
+                "About APG",
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () => Navigator.push(
                 context,
@@ -128,10 +124,9 @@ class Birthdays extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.notifications),
-              title: Text("Notification",
-                style: TextStyle(
-                    color: Colors.grey
-                ),
+              title: Text(
+                "Notification",
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () => Navigator.push(
                 context,
@@ -143,10 +138,9 @@ class Birthdays extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.school),
-              title: Text("Admission Policy",
-                style: TextStyle(
-                    color: Colors.grey
-                ),
+              title: Text(
+                "Admission Policy",
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () => Navigator.push(
                 context,
@@ -158,10 +152,9 @@ class Birthdays extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.control_point_duplicate),
-              title: Text("Terms & Condition",
-                style: TextStyle(
-                    color: Colors.grey
-                ),
+              title: Text(
+                "Terms & Condition",
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () => Navigator.push(
                 context,
@@ -173,10 +166,9 @@ class Birthdays extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.mail),
-              title: Text("Contact Us",
-                style: TextStyle(
-                    color: Colors.grey
-                ),
+              title: Text(
+                "Contact Us",
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () => Navigator.push(
                 context,
@@ -188,10 +180,9 @@ class Birthdays extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.work_history_outlined),
-              title: Text("Enquiry",
-                style: TextStyle(
-                    color: Colors.grey
-                ),
+              title: Text(
+                "Enquiry",
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () => Navigator.push(
                 context,
@@ -203,23 +194,22 @@ class Birthdays extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.logout),
-              title: Text("Logout",
-                style: TextStyle(
-                    color: Colors.grey
-                ),
+              title: Text(
+                "Logout",
+                style: TextStyle(color: Colors.grey),
               ),
               onTap: () => Navigator.pop(context),
             ),
-
-
           ],
         ),
       ),
     );
   }
 }
+
 class Note extends StatelessWidget {
   const Note({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -236,8 +226,10 @@ class Note extends StatelessWidget {
     );
   }
 }
+
 class BirthDate extends StatelessWidget {
   const BirthDate({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
