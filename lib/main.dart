@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:new2/school/pages/dashboard/Notifications.dart';
 
 import 'package:new2/school/pages/dashboard/dashboard.dart';
 
@@ -22,7 +23,7 @@ Future<void> main() async {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Birthdays(),
+    home: Notifications(),
   ));
 }
 
