@@ -39,7 +39,18 @@ class _MoodState extends State<Mood> {
         appBar: AppBar(
           title: Text("Order History"),
           backgroundColor: Colors.lightBlueAccent,
-        ),
+    // leading:Builder(
+    // builder: (context){
+    // return IconButton(icon: Icon(Icons.menu),
+    // onPressed: (){
+    // Scaffold.of(context).openDrawer(
+    //
+    // );
+    // }, );
+    // }
+    //
+    // )
+    ) ,
         body: isApiHit==false ? Center(child: CircularProgressIndicator())
             :
             requests.length == 0 ? Text("No data found") :
@@ -49,6 +60,7 @@ class _MoodState extends State<Mood> {
             itemCount: requests.length,
             itemBuilder: (context, index) {
               return Column(
+
                   children:[
                     Card(
                       color: Colors.white,
@@ -75,20 +87,23 @@ class _MoodState extends State<Mood> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(height: 8,),
-                              Text( requests[index]["request_id"].toString(),
+                              //("Name : ${requests[index]["name"]}")
+                              Text( ("Request_Id:  ${requests[index]["request_id"].toString()}"),
                                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
                               SizedBox(height: 8,),
-                              Text( requests[index]["name"],),
+                              Text(("Name : ${requests[index]["name"]}")),
+                              Text("Lat :${requests[index]["lat"]}"),
                               SizedBox(height: 8,),
-                              Text(requests[index]["lat"]),
+                              Text(" Lon :${requests[index]["lon"]}"),
                               SizedBox(height: 8,),
-                              Text(requests[index]["lon"]),
+                              Text("Units_Required: ${requests[index]["units_required"].toString()}"),
                               SizedBox(height: 8,),
-                              Text("Transaction Amount :"),
+                              Text(" Date :${requests[index]["date"]}"),
+                              Text(" Loacation :${requests[index]["location"]}"),
                               SizedBox(height: 8,),
-                              Text("School Approval :")
-
-
+                              Text(" From :${requests[index]["from"]}"),
+                              SizedBox(height: 8,),
+                              Text(" To :${requests[index]["location"]}"),
                             ],
                           )
 

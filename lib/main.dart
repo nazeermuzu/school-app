@@ -1,21 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:new2/apgschools.dart';
+
 import 'package:new2/school/pages/dashboard/dashboard.dart';
-import 'package:new2/school/pages/login/v2.dart';
-import 'package:new2/school/pages/request.dart';
 
-// import 'package:new1_project/listView.dart';
-// import 'package:new1_project/phoneauth.dart';
-// import 'package:new1_project/streamhome.dart';
+import 'apgschools.dart';
 
-import 'Push.dart';
-import 'firebase_data.dart';
-import 'homeScreen.dart';
-import 'image_picker.dart';
-import 'listView.dart';
-import 'otpauth.dart';
-import 'phoneauth.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +22,7 @@ Future<void> main() async {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: MyApp6(),
+    home: Birthdays(),
   ));
 }
 

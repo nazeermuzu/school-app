@@ -3,37 +3,27 @@ import "package:flutter/material.dart";
 
 import "orderhistory.dart";
 
-
-
-
-class MyApp6 extends StatelessWidget {
-  const MyApp6 ({Key? key}) : super(key: key);
-// This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Birthdays(),
-    );
-  }
-}
 class Birthdays extends StatelessWidget {
-  const Birthdays({Key? key}) : super(key: key);
+  const Birthdays({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dashboard",),
+        title: Text("dashboard"),
+        leading:Builder(
+            builder: (context){
+              return IconButton(icon: Icon(Icons.menu),
+                onPressed: (){
+                  Scaffold.of(context).openDrawer();
+                }, );
+        }
+
+        ) ,
       ),
-      body: const Center(
-        child: Icon(
-          Icons.cake,
-          size: 120.0,
-          color: Colors.orange,
-        ),
+      body: Center(
+        child: Text("data"),
+
       ),
       drawer: Drawer(
         backgroundColor: Colors.black,
@@ -71,16 +61,11 @@ class Birthdays extends StatelessWidget {
                 color: Colors.grey
               ),
               ),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => BirthDate(),
-                ),
-              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            Divider(
-
-            ),
+            Divider(),
             ListTile(
               leading: Icon(Icons.account_circle_sharp),
               title: Text("Order History",
@@ -88,12 +73,12 @@ class Birthdays extends StatelessWidget {
                     color: Colors.grey
                 ),
               ),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => Mood(),
-                ),
-              ),
+             onTap: () => Navigator.push(
+               context,
+               MaterialPageRoute(
+                 builder: (_) =>Mood(),
+               ),
+             ),
             ),
             Divider(),
             ListTile(
@@ -103,12 +88,10 @@ class Birthdays extends StatelessWidget {
                     color: Colors.grey
                 ),
               ),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => BirthDate(),
-                ),
-              ),
+
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
             Divider(),
             ListTile(
@@ -118,6 +101,7 @@ class Birthdays extends StatelessWidget {
                     color: Colors.grey
                 ),
               ),
+
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -133,6 +117,8 @@ class Birthdays extends StatelessWidget {
                     color: Colors.grey
                 ),
               ),
+
+
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -148,6 +134,7 @@ class Birthdays extends StatelessWidget {
                     color: Colors.grey
                 ),
               ),
+
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -163,6 +150,7 @@ class Birthdays extends StatelessWidget {
                     color: Colors.grey
                 ),
               ),
+
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -178,6 +166,7 @@ class Birthdays extends StatelessWidget {
                     color: Colors.grey
                 ),
               ),
+
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -193,6 +182,7 @@ class Birthdays extends StatelessWidget {
                     color: Colors.grey
                 ),
               ),
+
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -208,6 +198,7 @@ class Birthdays extends StatelessWidget {
                     color: Colors.grey
                 ),
               ),
+
               onTap: () => Navigator.pop(context),
             ),
 
@@ -218,6 +209,7 @@ class Birthdays extends StatelessWidget {
     );
   }
 }
+
 class Note extends StatelessWidget {
   const Note({Key? key}) : super(key: key);
   @override
