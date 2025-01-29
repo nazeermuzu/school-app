@@ -74,6 +74,8 @@ dependencies:
   flutter_screenutil: ^5.9.3
   flutter_side_menu: ^0.5.41
   pinput: ^5.0.1
+  another_carousel_pro: ^1.0.2
+  google_maps_flutter: ^2.10.0
 
 dev_dependencies:
   flutter_test:
