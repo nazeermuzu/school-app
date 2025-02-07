@@ -29,7 +29,7 @@ Future<void> main() async {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Notifications(),
+    home: Gmap(),
     // home: Gmap(),
   ));
 }
