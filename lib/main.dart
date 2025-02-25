@@ -6,6 +6,7 @@ import 'package:permission_handler/permission_handler.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+
   // await Firebase.initializeApp(
   //   options: const FirebaseOptions(
   //     apiKey: "AIzaSyD0DDISvce1mPifKZy_MWtkSMoQ-yibd3Y",
@@ -15,8 +16,9 @@ void main() async {
   //     storageBucket: "flutter-otp-auth-3b594.appspot.com",
   //   ),
   // );
-
+   
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatefulWidget {

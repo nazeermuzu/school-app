@@ -14,7 +14,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  final FocusNode _focusNode = FocusNode();
 
   final Api api = Api();
   bool _regularDonor = false;
@@ -38,7 +37,6 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   void initState() {
-    _focusNode.dispose();
     super.initState();
     fetchProfileData();
   }
