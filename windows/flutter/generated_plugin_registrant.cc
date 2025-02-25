@@ -14,11 +14,10 @@
 #include <firebase_auth/firebase_auth_plugin_c_api.h>
 #include <firebase_core/firebase_core_plugin_c_api.h>
 #include <firebase_storage/firebase_storage_plugin_c_api.h>
-#include <flutter_volume_controller/flutter_volume_controller_plugin_c_api.h>
-#include <flutter_webrtc/flutter_web_r_t_c_plugin.h>
+#include <flutter_secure_storage_windows/flutter_secure_storage_windows_plugin.h>
 #include <permission_handler_windows/permission_handler_windows_plugin.h>
-#include <zego_express_engine/zego_express_engine_plugin.h>
-#include <zego_zim/zego_zim_plugin.h>
+#include <stream_webrtc_flutter/flutter_web_r_t_c_plugin.h>
+#include <url_launcher_windows/url_launcher_windows.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
   AudioplayersWindowsPluginRegisterWithRegistrar(
@@ -37,14 +36,12 @@ void RegisterPlugins(flutter::PluginRegistry* registry) {
       registry->GetRegistrarForPlugin("FirebaseCorePluginCApi"));
   FirebaseStoragePluginCApiRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("FirebaseStoragePluginCApi"));
-  FlutterVolumeControllerPluginCApiRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("FlutterVolumeControllerPluginCApi"));
-  FlutterWebRTCPluginRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("FlutterWebRTCPlugin"));
+  FlutterSecureStorageWindowsPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FlutterSecureStorageWindowsPlugin"));
   PermissionHandlerWindowsPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("PermissionHandlerWindowsPlugin"));
-  ZegoExpressEnginePluginRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("ZegoExpressEnginePlugin"));
-  ZegoZimPluginRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("ZegoZimPlugin"));
+  FlutterWebRTCPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FlutterWebRTCPlugin"));
+  UrlLauncherWindowsRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("UrlLauncherWindows"));
 }

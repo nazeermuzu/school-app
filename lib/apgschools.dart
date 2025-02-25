@@ -10,12 +10,12 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'dashb.dart';
 
 //import 'dashboardscreen.dart';
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: MyApp(),
-  ));
-}
+// void main() {
+//   runApp(MaterialApp(
+//     debugShowCheckedModeBanner: false,
+//     home: MyApp(),
+//   ));
+// }
 
 class MyApp extends StatelessWidget {
   @override

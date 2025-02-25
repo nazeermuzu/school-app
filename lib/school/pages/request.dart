@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:new2/school/api/api.dart';
 import 'package:new2/school/pages/login/v2.dart';
 
-import 'login/v2.dart';
 
 class Votp extends StatelessWidget {
   TextEditingController phonecontroller = TextEditingController();
