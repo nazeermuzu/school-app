@@ -56,9 +56,9 @@ class _NotificationsState extends State<Notifications> {
           return GestureDetector(
             onTap: () {
               setState(() {
-              notifications[index]["is_read"] = 1;
+                notifications[index]["is_read"] = 1;
               });
-                Api().markNotificationAsRead(notifications[index]["id"]);
+              Api().markNotificationAsRead(notifications[index]["id"]);
 
             },
             child: Column(
@@ -138,6 +138,3 @@ class _NotificationsState extends State<Notifications> {
     );
   }
 }
-
-
-

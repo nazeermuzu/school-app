@@ -2,7 +2,8 @@
   "project_info": {
     "project_number": "698988468292",
     "project_id": "flutter-otp-auth-3b594",
-    "storage_bucket": "flutter-otp-auth-3b594.firebasestorage.app"
+    "storage_bucket": "flutter-otp-auth-3b594.firebasestorage.app",
+    "firebase_url": "https://flutter-otp-auth-3b594-default-rtdb.firebaseio.com/"
   },
   "client": [
     {

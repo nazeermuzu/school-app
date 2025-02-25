@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:new2/school/api/api.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import 'dashb.dart';
